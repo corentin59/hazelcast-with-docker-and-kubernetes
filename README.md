@@ -70,6 +70,8 @@ View service status
 Destroy service
 > kubectl stop service vlille
 
+## Thanks !
+* Noctarius : https://github.com/noctarius/hazelcast-kubernetes-discovery
 
 
 Expose

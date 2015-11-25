@@ -8,21 +8,42 @@
         <password>superPassword</password>
     </group>
 
-    <!--<management-center enabled="true">
-        http://localhost:8080/mancenter
-    </management-center>-->
+    <properties>
+        <!-- at the moment the discovery needs to be activated explicitly -->
+        <property name="hazelcast.discovery.enabled">true</property>
+    </properties>
 
     <network>
+        <join>
+            <!-- deactivate normal discovery -->
+            <multicast enabled="false"/>
+            <tcp-ip enabled="false" />
+
+            <!-- activate the Kubernetes plugin -->
+            <discovery-strategies>
+                <discovery-strategy enabled="true"
+                                    class="com.noctarius.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
+
+                    <properties>
+                        <!-- configure discovery service API lookup -->
+                        <property name="service-name">vlille</property>
+                    </properties>
+                </discovery-strategy>
+            </discovery-strategies>
+        </join>
+    </network>
+
+    <!-- Localhost test -->
+    <!--<network>
         <port auto-increment="true">5701</port>
         <join>
             <multicast enabled="false"></multicast>
             <tcp-ip enabled="true">
-                <!--<member>10.24.202.133</member>-->
                 <member>127.0.0.1</member>
             </tcp-ip>
 
         </join>
-    </network>
+    </network>-->
 
     <!-- Order session -->
     <map name="STATION_MAP">
