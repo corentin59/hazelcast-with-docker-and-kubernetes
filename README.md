@@ -48,7 +48,13 @@ You can now open this page : http://127.0.0.1/static/
 #### 3. Launch from kubectl (Kubernates) :
 
 Launch your latest version on 1 pod
-> kubectl run vlille --image=corentin59/hazelcast-with-docker-and-kubernetes:lates
+> kubectl run vlille --image=corentin59/hazelcast-with-docker-and-kubernetes:latest
+
+View pods status
+> kubectl get pods -o wide
+
+Expose
+> kubectl expose rc vlille --port=80 --target-port=8000
 
 
 #### 4. Display webapp :
