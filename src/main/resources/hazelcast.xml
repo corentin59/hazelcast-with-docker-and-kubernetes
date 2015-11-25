@@ -26,7 +26,9 @@
 
                     <properties>
                         <!-- configure discovery service API lookup -->
-                        <property name="service-name">vlille</property>
+                        <property name="service-dns">cluster.local</property>
+                        <!-- legal values are IPV4, IPV6 or empty (which defaults to IPV4) -->
+                        <property name="service-dns-ip-type">IPV4</property>
                     </properties>
                 </discovery-strategy>
             </discovery-strategies>
