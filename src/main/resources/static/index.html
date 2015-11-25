@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="stationApp" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Corentin Azelart">
+
+    <title>V'Lille API</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="color : #c7254e; font-weight: bold">V'Lille API</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!--
+    <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>-->
+
+    <div class="row" style="margin-top: 60px">
+        <div class="col-xs-6 col-md-4" ng-controller="ServerCtrl"><i class="glyphicon glyphicon-home"></i>&nbsp;&nbsp;&nbsp;{{server.name}}:{{server.port}}</div>
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4" ng-controller="StationListCtrl">
+            <span class="label label-danger pull-right" ng-show="!cache">CACHE : NO ({{time}}ms)</span>
+            <span class="label label-success pull-right" ng-show="cache">CACHE : YES ({{time}}ms)</span>
+        </div>
+    </div>
+
+    <div ng-controller="ServerCtrl" style="margin-top: 10px">
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>UID</th>
+                <th>Name</th>
+                <th>Host</th>
+                <th>Who</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="instance in instances">
+                <td>{{instance.id}}</td>
+                <td>{{instance.name}}</td>
+                <td>{{instance.host}}</td>
+                <td>
+                    <span class="label label-success" ng-show="instance.local">IT'S ME !!</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div ng-controller="StationListCtrl" style="margin-top: 10px">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>V'Lille ID</th>
+                    <th>Name</th>
+                    <th>Bikes</th>
+                    <th>Free</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="station in stations">
+                    <td>{{station.idx}}</td>
+                    <td>{{station.number}}</td>
+                    <td>{{station.name}}</td>
+                    <td>{{station.bikes}}</td>
+                    <td>{{station.free}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/controllers.js"></script>
+
+</body>
+</html>
