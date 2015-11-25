@@ -28,6 +28,11 @@
                 "name": "http",
                 "containerPort": 80,
                 "protocol": "TCP"
+              },
+              {
+                "name": "hazelcast",
+                "containerPort": 5701,
+                "protocol": "TCP"
               }
             ],
             "env": [
