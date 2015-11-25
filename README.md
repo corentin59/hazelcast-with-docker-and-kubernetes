@@ -1,9 +1,10 @@
-## CAPGEMINI FLASH30 : Hazelcast with Docker and Kubernetes ##
+## CAPGEMINI FLASH30 : Hazelcast with Docker and Kubernetes on Google Cloud Container ##
 
 **Warning : In progress !**
 
 ### Sample
-This is a web application for display V'Lille stations in a browser.
+This is a web application to display V'Lille bikes stations in a browser.
+Hazelcast is used for cache, we use hazelcast-kubernetes-discovery discovery (since Hazelcast 3.6).
 
 ### Build
 [![Build Status](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)
