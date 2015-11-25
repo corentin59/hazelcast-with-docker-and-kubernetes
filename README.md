@@ -16,13 +16,39 @@ This is a web application for display V'Lille stations in a browser.
 ### Boot
 
 #### 1. Build image :
-You can build your own container :
+The build is provided by Travis
+https://travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes/
 
+#### 2. Docker Hub :
+You can pull the image from Docker hub
+https://hub.docker.com/r/corentin59/hazelcast-with-docker-and-kubernetes/
 
-#### 2. Launch instances :
+#### 3. Install kubectl (Debian) :
+The Google Container Engine quick start to install
+https://cloud.google.com/container-engine/docs/before-you-begin
 
+Install GCloud :
+> apt-get install curl
+> curl https://sdk.cloud.google.com | bash
+> exec -l $SHELL
+> gcloud init
+> gcloud config set compute/zone europe-west1-b
+> gcloud container clusters get-credentials cluster-vlille (please create a cluster before)
 
-#### 3. Launch instances :
+Install Kubernetes on GCloud :
+> gcloud components update kubectl
+
+Install gcp-live-k8s-visualizer
+> apt-get install git
+> git clone https://github.com/brendandburns/gcp-live-k8s-visualizer.git
+> cd gcp-live-k8s-visualizer
+> kubectl proxy -p 8080 -w .
+You can now open this page : http://127.0.0.1/static/
+
+#### 3. Launch from kubectl (Kubernates) :
+
+Launch your latest version on 1 pod
+> kubectl run vlille --image=corentin59/hazelcast-with-docker-and-kubernetes:lates
 
 
 #### 4. Display webapp :
