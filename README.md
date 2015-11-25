@@ -5,6 +5,8 @@
 ### Sample
 This is a web application for display V'Lille stations in a browser.
 
+### Build
+[![Build Status](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)
 
 ### Technical
 * Tomcat 8 is the servlet container
@@ -84,14 +86,11 @@ Destroy service
 > kubectl stop service vlille
 
 Destroy rc
-> kubectl stop rv vlille
+> kubectl stop rc vlille
 
 ## Thanks !
 * Noctarius : https://github.com/noctarius/hazelcast-kubernetes-discovery
-
-
-#### 4. Display vlille app :
-
+* Ray Tsang : https://www.youtube.com/watch?v=kT1vmK0r184
 
 ## License
 
