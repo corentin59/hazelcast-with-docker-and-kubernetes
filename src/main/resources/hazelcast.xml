@@ -1,7 +1,4 @@
-<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config
-    http://www.hazelcast.com/schema/config/hazelcast-config-3.0.xsd"
-           xmlns="http://www.hazelcast.com/schema/config"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<hazelcast>
 
     <group>
         <name>prod</name>
@@ -26,9 +23,8 @@
 
                     <properties>
                         <!-- configure discovery service API lookup -->
-                        <property name="service-dns">cluster.local</property>
-                        <!-- legal values are IPV4, IPV6 or empty (which defaults to IPV4) -->
-                        <property name="service-dns-ip-type">IPV4</property>
+                        <property name="service-name">vlille</property>
+                        <property name="namespace">default</property>
                     </properties>
                 </discovery-strategy>
             </discovery-strategies>
