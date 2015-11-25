@@ -38,12 +38,12 @@
 		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast</artifactId>
-			<version>3.5.3</version>
+			<version>3.6-EA</version>
 		</dependency>
 		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast-client</artifactId>
-			<version>3.5.3</version>
+			<version>3.6-EA</version>
 		</dependency>
 		<dependency>
 			<groupId>com.noctarius.discovery</groupId>
