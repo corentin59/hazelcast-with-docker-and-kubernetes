@@ -47,14 +47,33 @@ You can now open this page : http://127.0.0.1/static/
 
 #### 3. Launch from kubectl (Kubernates) :
 
-Launch your latest version on 1 pod
-> kubectl run vlille --image=corentin59/hazelcast-with-docker-and-kubernetes:latest
+Copy kubernetes/* files on your kubectl master service
+
+Create cluster
+> gcloud container clusters create cluster-vlille --num-nodes 3 --machine-type f1-micro --zone europe-west1-b --no-enable-cloud-logging --no-enable-cloud-monitoring
+
+Launch the replica controller
+> kubectl create -f vlille.rc.json
+
+Create service
+> kubectl create -f vlille.service.json
 
 View pods status
 > kubectl get pods -o wide
 
+View replica status
+> kubectl get rc vlille
+
+View service status
+> kubectl get service vlille
+
+Destroy service
+> kubectl stop service vlille
+
+
+
 Expose
-> kubectl expose rc vlille --port=80 --target-port=8000
+> kubectl expose rc vlille --create-external-load-balancer=true --port=80
 
 
 #### 4. Display webapp :

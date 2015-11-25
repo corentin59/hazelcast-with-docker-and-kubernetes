@@ -1,0 +1,46 @@
+{
+  "kind": "ReplicationController",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "vlille"
+  },
+  "spec": {
+    "replicas": 2,
+    "selector": {
+      "name": "vlille",
+      "app": "vlille"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "name": "vlille",
+          "app": "vlille"
+        }
+      },
+      "spec": {
+        "volumes": null,
+        "containers": [
+          {
+            "name": "vlille",
+            "image": "corentin59/hazelcast-with-docker-and-kubernetes:latest",
+            "ports": [
+              {
+                "name": "http",
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "DNS_DOMAIN",
+                "value": "cluster.local"
+              }
+            ],
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always"
+      }
+    }
+  }
+}
