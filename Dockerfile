@@ -1,4 +1,4 @@
-FROM sctrcdr/spring-boot-web:1.1
+FROM java:8
 
 MAINTAINER Corentin <corentin@azelart.fr>
 
