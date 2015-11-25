@@ -1,8 +1,10 @@
 ## CAPGEMINI FLASH30 : Hazelcast with Docker and Kubernetes ##
-Session start : 08.11.2015 @ 13:30-14:00
+
+**Warning : In progress !**
 
 ### Sample
 This is a web application for display V'Lille stations in a browser.
+
 
 ### Technical
 * Tomcat 8 is the servlet container
@@ -12,6 +14,14 @@ This is a web application for display V'Lille stations in a browser.
 * Sprint Boot for micro container
 * AngularJS for front
 * Hazelcast for cache and data replication
+
+### Quick Boot
+
+ 1. Copy vlille.rc.json and vlille.service.json on a server with kubectl
+ 2. Create a cluster : gcloud container clusters create cluster-vlille --num-nodes 3 --machine-type f1-micro --zone europe-west1-b --no-enable-cloud-logging --no-enable-cloud-monitoring
+ 2. Start rc : kubectl create -f vlille.rc.json
+ 3. Start service (load balancer) : kubectl create -f vlille.service.json
+ 4. Wait... and open the loadbalancer ip : kubectl get services
 
 ### Boot
 
@@ -45,7 +55,7 @@ Install gcp-live-k8s-visualizer
 > kubectl proxy -p 8080 -w .
 You can now open this page : http://127.0.0.1/static/
 
-#### 3. Launch from kubectl (Kubernates) :
+#### 4. Launch from kubectl (Kubernates) :
 
 Copy kubernetes/* files on your kubectl master service
 
@@ -67,18 +77,20 @@ View replica status
 View service status
 > kubectl get service vlille
 
+Resize
+> kubectl scale rc vlille --replicas=5
+
 Destroy service
 > kubectl stop service vlille
+
+Destroy rc
+> kubectl stop rv vlille
 
 ## Thanks !
 * Noctarius : https://github.com/noctarius/hazelcast-kubernetes-discovery
 
 
-Expose
-> kubectl expose rc vlille --create-external-load-balancer=true --port=80
-
-
-#### 4. Display webapp :
+#### 4. Display vlille app :
 
 
 ## License
