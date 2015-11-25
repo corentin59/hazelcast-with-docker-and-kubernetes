@@ -1,8 +1,10 @@
 language: java
+services :
+  - docker
 jdk:
   - oraclejdk8
 sudo: false
 install: true
 before_script:
 - mvn package spring-boot:repackage
-script: mvn package spring-boot:repackage
+script: docker build .
