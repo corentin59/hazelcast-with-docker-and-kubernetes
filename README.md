@@ -23,7 +23,6 @@ Tomorrow !
 See here in HD : https://www.youtube.com/watch?v=ZjVvddVGSbU
 
 ### Quick Boot
-
  1. Copy vlille.rc.json and vlille.service.json on a server with kubectl
  2. Create a cluster : gcloud container clusters create cluster-vlille --num-nodes 3 --machine-type f1-micro --zone europe-west1-b --no-enable-cloud-logging --no-enable-cloud-monitoring
  2. Start rc : kubectl create -f vlille.rc.json
