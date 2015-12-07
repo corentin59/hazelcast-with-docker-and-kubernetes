@@ -81,7 +81,7 @@ View service status
 > kubectl get service vlille
 
 Resize
-> kubectl scale rc vlille --replicas=5
+> kubectl scale rc vlille --replicas=3
 
 Destroy service
 > kubectl stop service vlille
