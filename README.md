@@ -8,7 +8,7 @@ Hazelcast is used for cache, we use hazelcast-kubernetes-discovery for pods disc
 Tomorrow !
 
 ### Build
-[![Build Status](https://travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes)](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)
+[![Build Status](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)](https://travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes)
 
 ### Technical
 * Tomcat 8 is the servlet container
