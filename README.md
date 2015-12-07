@@ -2,7 +2,7 @@
 
 ### Sample
 This is a web application to display V'Lille bikes stations in a browser.
-Hazelcast is used for cache, we use hazelcast-kubernetes-discovery discovery (since Hazelcast 3.6).
+Hazelcast is used for cache, we use hazelcast-kubernetes-discovery for pods discovery (since Hazelcast 3.6).
 
 ### Slides
 Tomorrow !
