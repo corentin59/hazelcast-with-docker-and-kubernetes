@@ -1,7 +1,7 @@
 ## FLASH30 : Hazelcast with Docker and Kubernetes on Google Cloud Container ##
 
 ### Sample
-This is a web application to display V'Lille bikes stations in a browser.
+This is a web application to display [V'Lille](vlille.fr/stations/les-stations-vlille.aspx) bikes stations in a browser.
 Hazelcast is used for cache, we use hazelcast-kubernetes-discovery for pods discovery (since Hazelcast 3.6).
 
 ### Slides
