@@ -1,10 +1,11 @@
-## CAPGEMINI FLASH30 : Hazelcast with Docker and Kubernetes on Google Cloud Container ##
-
-**Warning : In progress !**
+## FLASH30 : Hazelcast with Docker and Kubernetes on Google Cloud Container ##
 
 ### Sample
 This is a web application to display V'Lille bikes stations in a browser.
 Hazelcast is used for cache, we use hazelcast-kubernetes-discovery discovery (since Hazelcast 3.6).
+
+### Slides
+Tomorrow !
 
 ### Build
 [![Build Status](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)
@@ -17,6 +18,9 @@ Hazelcast is used for cache, we use hazelcast-kubernetes-discovery discovery (si
 * Sprint Boot for micro container
 * AngularJS for front
 * Hazelcast for cache and data replication
+
+### Video
+See here in HD : https://www.youtube.com/watch?v=ZjVvddVGSbU
 
 ### Quick Boot
 
@@ -50,13 +54,6 @@ Install GCloud :
 
 Install Kubernetes on GCloud :
 > gcloud components update kubectl
-
-Install gcp-live-k8s-visualizer
-> apt-get install git
-> git clone https://github.com/brendandburns/gcp-live-k8s-visualizer.git
-> cd gcp-live-k8s-visualizer
-> kubectl proxy -p 8080 -w .
-You can now open this page : http://127.0.0.1/static/
 
 #### 4. Launch from kubectl (Kubernates) :
 
