@@ -65,12 +65,14 @@ public class VLilleService {
         final Set<Member> members = this.hazelcastInstance.getCluster().getMembers();
         final List<InstanceDTO> instances = new ArrayList<InstanceDTO>(members.size());
         for(final Member member : this.hazelcastInstance.getCluster().getMembers()) {
-            final InstanceDTO instanceDTO = new InstanceDTO();
-            instanceDTO.setId(member.getUuid());
-            instanceDTO.setHost(member.getInetSocketAddress().getHostString());
-            instanceDTO.setLocal(member.localMember());
-            instanceDTO.setName(this.hazelcastInstance.getConfig().getGroupConfig().getName());
-            instances.add(instanceDTO);
+            if(!member.localMember()) {
+                final InstanceDTO instanceDTO = new InstanceDTO();
+                instanceDTO.setId(member.getUuid());
+                instanceDTO.setHost(member.getInetSocketAddress().getHostString());
+                //instanceDTO.setLocal(member.localMember());
+                instanceDTO.setName(this.hazelcastInstance.getConfig().getGroupConfig().getName());
+                instances.add(instanceDTO);
+            }
         }
         serverDTO.setInstances(instances);
         serverDTO.setHazelcastName(this.hazelcastInstance.getConfig().getNetworkConfig().getPublicAddress());
