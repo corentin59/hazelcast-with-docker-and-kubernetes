@@ -53,7 +53,7 @@ public class VLilleService {
     @PostConstruct
     public void init() {
         // 1. Create and configure new hazelcast instance
-        this.hazelcastInstance = Hazelcast.newHazelcastInstance(new ClasspathXmlConfig("hazelcast.xml"));
+        this.hazelcastInstance = Hazelcast.getOrCreateHazelcastInstance(new ClasspathXmlConfig("hazelcast.xml"));
     }
 
     /**
