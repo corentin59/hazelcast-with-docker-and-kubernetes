@@ -5,7 +5,7 @@ This is a web application to display [V'Lille](http://vlille.fr/stations/les-sta
 Hazelcast is used for cache, we use hazelcast-kubernetes-discovery for pods discovery (since Hazelcast 3.6).
 
 ### Slides
-Tomorrow !
+[Here](https://github.com/corentin59/hazelcast-with-docker-and-kubernetes/blob/master/slides/SLIDES.pdf)
 
 ### Build
 [![Build Status](https://api.travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes.png)](https://travis-ci.org/corentin59/hazelcast-with-docker-and-kubernetes)
